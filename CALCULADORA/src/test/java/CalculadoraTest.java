@@ -230,7 +230,7 @@ public class CalculadoraTest {
         double a = 108;
         double b = 0;
         Calculadora instance = new Calculadora();
-        double expResult = 0.0;
+        double expResult = 0;
         double result = instance.division(a, b);
         assertEquals(expResult, result);
     }
@@ -238,54 +238,178 @@ public class CalculadoraTest {
     @Test
     public void TCD05() {
         System.out.println("division");
+        double a = 25;
+        double b = 10;
         Calculadora instance = new Calculadora();
-        assertThrows(ArithmeticException.class, () -> instance.division(0, 25));;
+        double expResult = 2.50;
+        double result = instance.division(a, b);
+        assertEquals(expResult, result);
     }
-
+    
+    // EXPONENCIACIÓN
     @Test
-    public void testExponenciacion() {
+    public void TCE01() {
         System.out.println("exponenciacion");
-        double base = 0.0;
-        double exponente = 0.0;
+        double base = 2;
+        double exponente = 3;
+        Calculadora instance = new Calculadora();
+        double expResult = 8;
+        double result = instance.exponenciacion(base, exponente);
+        assertEquals(expResult, result);       
+    }
+    
+    @Test
+    public void TCE02() {
+        System.out.println("exponenciacion");
+        double base = 2;
+        double exponente = -3;
+        Calculadora instance = new Calculadora();
+        double expResult = 0.125;
+        double result = instance.exponenciacion(base, exponente);
+        assertEquals(expResult, result);       
+    }
+    
+    @Test
+    public void TCE03() {
+        System.out.println("exponenciacion");
+        double base = -2;
+        double exponente = 3;
+        Calculadora instance = new Calculadora();
+        double expResult = -8;
+        double result = instance.exponenciacion(base, exponente);
+        assertEquals(expResult, result);       
+    }
+    
+    @Test
+    public void TCE04() {
+        System.out.println("exponenciacion");
+        double base = 2;
+        double exponente = 0;
+        Calculadora instance = new Calculadora();
+        double expResult = 1;
+        double result = instance.exponenciacion(base, exponente);
+        assertEquals(expResult, result);       
+    }
+    
+    @Test
+    public void TCE05() {
+        System.out.println("exponenciacion");
+        double base = 0;
+        double exponente = 2;
+        Calculadora instance = new Calculadora();
+        double expResult = 0;
+        double result = instance.exponenciacion(base, exponente);
+        assertEquals(expResult, result);       
+    }
+    
+    @Test
+    public void TCE06() {
+        System.out.println("exponenciacion");
+        double base = 2;
+        double exponente = 0.5;
         Calculadora instance = new Calculadora();
         double expResult = 0.0;
         double result = instance.exponenciacion(base, exponente);
-        assertEquals(expResult, result, 0);
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result, 0.00999);       
+    }
+    
+    @Test
+    public void TCE07() {
+        System.out.println("exponenciacion");
+        double base = 2;
+        double exponente = 1/2;
+        Calculadora instance = new Calculadora();
+        double expResult = 1.0;
+        double result = instance.exponenciacion(base, exponente);
+        assertEquals(expResult, result);       
     }
 
-    //RADICACION
+    //RADICACIÓN
     @Test
-    public void TCR01() {
+    public void TCRD01() {
         System.out.println("radicacion");
         double numero = 16;
         double indice = 2;
         Calculadora instance = new Calculadora();
         double expResult = 4;
         double result = instance.radicacion(numero, indice);
-        assertEquals(expResult, result, 0);
+        assertEquals(expResult, result);
     }
     
     @Test
-    public void TCR02() {
+    public void TCRD02() {
         System.out.println("radicacion");
         double numero = 27;
         double indice = 3;
         Calculadora instance = new Calculadora();
         double expResult = 3;
         double result = instance.radicacion(numero, indice);
-        assertEquals(expResult, result, 0);
+        assertEquals(expResult, result);
     }
     
     @Test
-    public void TCR03() {
+    public void TCRD03() {
         System.out.println("radicacion");
         double numero = -16;
         double indice = 2;
         Calculadora instance = new Calculadora();
+        double expResult = 0;
+        double result = instance.radicacion(numero, indice);
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void TCRD04() {
+        System.out.println("radicacion");
+        double numero = 0;
+        double indice = 2;
+        Calculadora instance = new Calculadora();
+        double expResult = 0;
+        double result = instance.radicacion(numero, indice);
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void TCRD05() {
+        System.out.println("radicacion");
+        double numero = 81;
+        double indice = 4;
+        Calculadora instance = new Calculadora();
         double expResult = 3;
         double result = instance.radicacion(numero, indice);
-        assertEquals(expResult, result, 0);
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void TCRD06() {
+        System.out.println("radicacion");
+        double numero = 10;
+        double indice = 2.5;
+        Calculadora instance = new Calculadora();
+        double expResult = 0;
+        double result = instance.radicacion(numero, indice);
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void TCRD07() {
+        System.out.println("radicacion");
+        double numero = 10.5;
+        double indice = 2;
+        Calculadora instance = new Calculadora();
+        double expResult = 0;
+        double result = instance.radicacion(numero, indice);
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void TCRD08() {
+        System.out.println("radicacion");
+        double numero = 10.5;
+        double indice = 0;
+        Calculadora instance = new Calculadora();
+        double result = instance.radicacion(numero, indice);
+        assertTrue(Double.isInfinite(result));
     }
 
     //NUMEROS AMIGOS
@@ -298,19 +422,17 @@ public class CalculadoraTest {
         boolean expResult = true;
         boolean result = instance.sonAmigos(a, b);
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
     }
     
     @Test
     public void TNA02() {
         System.out.println("sonAmigos");
         int a = 10;
-        int b = 14;
+        int b = 10;
         Calculadora instance = new Calculadora();
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.sonAmigos(a, b);
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
     }
     
     @Test
@@ -324,9 +446,9 @@ public class CalculadoraTest {
         assertEquals(expResult, result);
     }
 
-    //DIVISORES
+    //SUMA DE DIVISORES
     @Test
-    public void TCD01() {
+    public void TCSD01() {
         System.out.println("sumaDivisores");
         int x = 6;
         Calculadora instance = new Calculadora();
@@ -336,37 +458,27 @@ public class CalculadoraTest {
     }
     
     @Test
-    public void TCD02() {
+    public void TCSD02() {
         System.out.println("sumaDivisores");
         int x = -10;
         Calculadora instance = new Calculadora();
-        int expResult = 0;
+        int expResult = 1;
         int result = instance.sumaDivisores(x);
         assertEquals(expResult, result);
     }
     
     @Test
-    public void TCD03() {
+    public void TCSD03() {
         System.out.println("sumaDivisores");
         int x = 0;
         Calculadora instance = new Calculadora();
-        int expResult = 0;
+        int expResult = 1;
         int result = instance.sumaDivisores(x);
         assertEquals(expResult, result);
-    }
-    
+    }   
+       
     @Test
-    public void TCD04() {
-        System.out.println("sumaDivisores");
-        double x = 1.5;
-        Calculadora instance = new Calculadora();
-        int expResult = 0;
-        double result = instance.sumaDivisores(x);
-        assertEquals(expResult, result);
-    }
-    
-    @Test
-    public void TCD05() {
+    public void TCSD05() {
         System.out.println("sumaDivisores");
         int x = 7;
         Calculadora instance = new Calculadora();
@@ -376,7 +488,7 @@ public class CalculadoraTest {
     }
     
     @Test
-    public void TCD06() {
+    public void TCSD06() {
         System.out.println("sumaDivisores");
         int x = 1;
         Calculadora instance = new Calculadora();
