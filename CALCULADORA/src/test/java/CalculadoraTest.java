@@ -54,7 +54,7 @@ public class CalculadoraTest {
         double a = 2.5;
         double b = 3.6;
         Calculadora instance = new Calculadora();
-        double expResult = 6.2;
+        double expResult = 6.1;
         double result = instance.suma(a, b);
         assertEquals(expResult, result);
     }
@@ -308,7 +308,7 @@ public class CalculadoraTest {
         double base = 2;
         double exponente = 0.5;
         Calculadora instance = new Calculadora();
-        double expResult = 0.0;
+        double expResult = 1.41;
         double result = instance.exponenciacion(base, exponente);
         assertEquals(expResult, result, 0.00999);       
     }
@@ -386,9 +386,9 @@ public class CalculadoraTest {
         double numero = 10;
         double indice = 2.5;
         Calculadora instance = new Calculadora();
-        double expResult = 0;
+        double expResult = 2.51;
         double result = instance.radicacion(numero, indice);
-        assertEquals(expResult, result);
+        assertEquals(expResult, result, 0.009);
     }
     
     @Test
@@ -397,9 +397,9 @@ public class CalculadoraTest {
         double numero = 10.5;
         double indice = 2;
         Calculadora instance = new Calculadora();
-        double expResult = 0;
+        double expResult = 3.241;
         double result = instance.radicacion(numero, indice);
-        assertEquals(expResult, result);
+        assertEquals(expResult, result, 0.009);
     }
     
     @Test
@@ -441,7 +441,7 @@ public class CalculadoraTest {
         int a = -220;
         int b = -284;
         Calculadora instance = new Calculadora();
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.sonAmigos(a, b);
         assertEquals(expResult, result);
     }
@@ -452,7 +452,7 @@ public class CalculadoraTest {
         System.out.println("sumaDivisores");
         int x = 6;
         Calculadora instance = new Calculadora();
-        int expResult = 12;
+        int expResult = 6;
         int result = instance.sumaDivisores(x);
         assertEquals(expResult, result);
     }
@@ -482,7 +482,7 @@ public class CalculadoraTest {
         System.out.println("sumaDivisores");
         int x = 7;
         Calculadora instance = new Calculadora();
-        int expResult = 2;
+        int expResult = 1;
         double result = instance.sumaDivisores(x);
         assertEquals(expResult, result);
     }
